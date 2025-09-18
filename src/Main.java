@@ -14,11 +14,14 @@ public class Main {
 
         String sinopse;
         sinopse = """
-					Filme Top Gun
+					Filme Top Gun com a nota %.1f
 					Filme de aventura com galã dos anos 80
 					Muito bom!
 					Ano de lancamento 
-					""" + anoDeLancamento;
+					""".formatted(notaDoFilme) + anoDeLancamento;
         System.out.println(sinopse);
+
+        int classificacao = (int) (media/2);
+        System.out.println(classificacao);
     }
 }
