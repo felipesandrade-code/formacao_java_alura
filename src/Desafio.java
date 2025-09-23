@@ -107,17 +107,17 @@ public class Desafio {
 //        }
 
 //        Crie um programa que solicite ao usuário um número e calcule o fatorial desse número.
-        System.out.println("Digite um número para calcular o fatorial:");
-        int resultado = leitura.nextInt();
-        int resultadoFatorial = 0;
-        if(resultado < 1){
-            System.out.println("Números negativos não são aceitos, tente novamente!");
-            return;
-        } else{
-            for(int i = 1; i <= resultado; i++){
-                resultadoFatorial =resultado * i;
-                System.out.println(resultado + " *" + i + " =" + resultadoFatorial);
-            }
-        }
+//        System.out.println("Digite um número para calcular o fatorial:");
+//        int numeroFatorial = leitura.nextInt();
+//        int resultadoFatorial = 0;
+//        if(numeroFatorial < 1){
+//            System.out.println("Números negativos não são aceitos, tente novamente!");
+//            return;
+//        } else{
+//            for(int i = 1; i <= numeroFatorial; i++){
+//                resultadoFatorial =numeroFatorial * i;
+//                System.out.println(numeroFatorial + " *" + i + " =" + resultadoFatorial);
+//            }
+//        }
     }
 }
