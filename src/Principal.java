@@ -1,16 +1,13 @@
-import Modelos.Episodio;
-import Modelos.Filme;
-import Modelos.Pessoa;
-import Modelos.Serie;
+import Modelos.*;
 import calculos.CalculadoraDeTempo;
 import calculos.FiltroRecomendacao;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme("O poderoso chefão");
-        meuFilme.setAnoDeLancamento(1970);
+        Filme meuFilme = new Filme("O poderoso chefão", 1970);
         meuFilme.setDuracaoEmMinutos(180);
         System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
 
@@ -20,21 +17,19 @@ public class Principal {
         meuFilme.avalia(10);
         System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
+
         //meuFilme.somaDasAvaliacoes = 10;
         //meuFilme.totalDeAvaliacoes = 1;
         //System.out.println(meuFilme.pegaMedia());
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost", 2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
         lost.setMinutosPorEpisodio(50);
         System.out.println("Duração para maratonar Lost: " + lost.getDuracaoEmMinutos());
 
-        Filme outroFilme = new Filme("Avatar");
-        outroFilme.setAnoDeLancamento(2023);
+        Filme outroFilme = new Filme("Avatar", 2023);
         outroFilme.setDuracaoEmMinutos(200);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
@@ -52,10 +47,8 @@ public class Principal {
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
 
-        var filmeDoPaulo = new Filme("Dogville");
+        var filmeDoPaulo = new Filme("Dogville", 2003);
         filmeDoPaulo.setDuracaoEmMinutos(200);
-        filmeDoPaulo.setNome("Dogville");
-        filmeDoPaulo.setAnoDeLancamento(2003);
         filmeDoPaulo.avalia(10);
 
         ArrayList<Filme> ListaDeFilmes = new ArrayList<>();
@@ -69,17 +62,12 @@ public class Principal {
 
 
 //      Realização do exercício não obrigatório do cap1 do curso Java: trabalhando com listas e coleções de dados.
-        var fernanda = new Pessoa();
-        fernanda.setIdade(16);
-        fernanda.setNome("Fernanda");
+        var fernanda = new Pessoa("Fernanda", 16);
 
-        var felipe = new Pessoa();
-        felipe.setNome("Felipe");
-        felipe.setIdade(20);
+        var felipe = new Pessoa("Felipe", 20);
 
-        var viviane = new Pessoa();
-        viviane.setNome("Viviane");
-        viviane.setIdade(54);
+        var viviane = new Pessoa("Viviane", 54);
+
 
         ArrayList<Pessoa> ListaDePessoas = new ArrayList<>();
         ListaDePessoas.add(felipe);
@@ -90,7 +78,32 @@ public class Principal {
         System.out.println("Primeira pessoa da nossa lista de pessoas é: " + ListaDePessoas.getFirst().getNome());
         System.out.println("Segue agora a nossa lista completa de pessoas: " + ListaDePessoas);
 
+//       Realização do desafio do cap 2 do curso Java: trabalhando com listas e coleções de dados.
+        Produto cafe = new Produto("Café", 20.30, 40);
 
+        Produto chocolate = new Produto("Chocolate", 14.50, 20);
+
+        Produto balaDeGoma = new Produto("Bala de goma", 3.50, 60);
+
+
+        ArrayList<Produto> ListaDeProdutos = new ArrayList<>();
+        ListaDeProdutos.add(cafe);
+        ListaDeProdutos.add(chocolate);
+        ListaDeProdutos.add(balaDeGoma);
+
+        System.out.println("Nossa lista de produtos possui o tamanho de: " + ListaDeProdutos.size() + " produtos.");
+        System.out.println("Nosso segundo produto da lista é: " + ListaDeProdutos.get(1).getNome());
+        System.out.println("Nossa lista: "+ ListaDeProdutos.toString());
+
+        ProdutoPerecivel pao = new ProdutoPerecivel(LocalDate.of(2025,02,15), "pão", 16.30, 10);
+
+        ProdutoPerecivel iorgute = new ProdutoPerecivel(LocalDate.of(2025, 12, 01), "iorgute", 25.30, 15);
+
+        ArrayList<ProdutoPerecivel> ListaDeProdutosPereciveis = new ArrayList<>();
+        ListaDeProdutosPereciveis.add(pao);
+        ListaDeProdutosPereciveis.add(iorgute);
+
+        System.out.println("Segue a nossa lista de produtos perecíveis: " + ListaDeProdutosPereciveis.toString());
 
 
     }
