@@ -5,6 +5,7 @@ import Modelos.Serie;
 import Modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -36,5 +37,19 @@ public class PrincipalComListas {
 
 //     Maneira mais enxuta de fazer o forEach;
 //        Lista.forEach(nome -> System.out.println(nome));
+
+    ArrayList<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Adam Sandler");
+        buscaPorArtista.add("Paulo");
+        buscaPorArtista.add("Jaqueline");
+
+        System.out.println(buscaPorArtista);
+
+      Collections.sort(buscaPorArtista);
+      System.out.println("Depois da ordenção temos: ");
+      System.out.println(buscaPorArtista);
+      System.out.println("Lista de títulos ordenados");
+      Collections.sort(Lista);
+      System.out.println(Lista);
     }
 }
