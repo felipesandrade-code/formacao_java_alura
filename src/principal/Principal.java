@@ -6,6 +6,8 @@ import calculos.FiltroRecomendacao;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Principal {
     public static void main(String[] args) {
@@ -106,7 +108,6 @@ public class Principal {
         ListaDeProdutosPereciveis.add(iorgute);
 
         System.out.println("Segue a nossa lista de produtos perecíveis: " + ListaDeProdutosPereciveis.toString());
-
 
     }
 }
