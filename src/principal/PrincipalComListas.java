@@ -72,8 +72,5 @@ public class PrincipalComListas {
         System.out.println("Lista dos números após serem ordenados: " + numerosList);
 
 
-
-
-
     }
 }

@@ -6,10 +6,19 @@ import java.util.List;
 public class ContaBancaria {
     private int numeroDaConta;
     private double saldo;
+    private double limiteCartaoDeCredito;
 
     public ContaBancaria(int numeroDaConta, double saldo){
         this.numeroDaConta = numeroDaConta;
         this.saldo = saldo;
+    }
+
+    public ContaBancaria(double limiteCartaoDeCredito){
+        this.limiteCartaoDeCredito = limiteCartaoDeCredito;
+    }
+
+    public ContaBancaria(){
+
     }
 
     public double getSaldo() {
@@ -18,6 +27,10 @@ public class ContaBancaria {
 
     public int getNumeroDaConta() {
         return numeroDaConta;
+    }
+
+    public double getLimiteCartaoDeCredito(){
+        return limiteCartaoDeCredito;
     }
 
     public static void main(String[] args) {

@@ -2,7 +2,7 @@ package Modelos;
 
 import java.util.ArrayList;
 
-public class Produto {
+public class Produto implements Comparable<Produto> {
     private String nome;
     private double preco;
     private int quantidade;
@@ -12,6 +12,15 @@ public class Produto {
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
+    }
+
+    public Produto(String nome, double preco){
+        this.nome = nome;
+        this.preco = preco;
+    }
+
+    public Produto(){
+
     }
 
     public String getNome() {
@@ -35,6 +44,16 @@ public class Produto {
         return "\nProduto: " + this.nome + "\nPreço: " + this.preco + "\nQuantidade: " + this.quantidade;
     }
 
+    @Override
+    public int compareTo(Produto outroProduto) {
+        if(this.preco > outroProduto.getPreco()){
+            return 1;
+        } else if (this.preco < outroProduto.getPreco()) {
+            return -1;
+        } else{
+            return 0;
+        }
+    }
 
     public static void main(String[] args) {
         Produto cpu = new Produto("PC", 5500, 1);
